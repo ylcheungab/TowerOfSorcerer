@@ -1,17 +1,19 @@
 package items;
 
-public class hero extends creatures{
+import java.util.ArrayList;
+
+public class Hero extends Creatures{
 	private int[] holdItems;
 
-	public hero(String name, String picName, int iD, boolean pickable,
-			int featureID, String description, int hp, int atk, int def,
+	public Hero(String name, String picName, int iD, boolean pickable,
+			ArrayList<Integer> featureID, String description, int hp, int atk, int def,
 			int[] holdItems) {
 		super(name, picName, iD, pickable, featureID, description, hp, atk, def);
 		this.holdItems = holdItems;
 	}
 	
-	public hero(String name, String picName, int iD, 
-			int featureID, String description, int hp, int atk, int def,
+	public Hero(String name, String picName, int iD, 
+			ArrayList<Integer> featureID, String description, int hp, int atk, int def,
 			int[] holdItems) {
 		super(name, picName, iD, false, featureID, description, hp, atk, def);
 		this.holdItems = holdItems;
@@ -25,6 +27,8 @@ public class hero extends creatures{
 		this.holdItems = holdItems;
 	}
 	
-	
+	public void trigger(Items item){
+		
+	}
 	
 }

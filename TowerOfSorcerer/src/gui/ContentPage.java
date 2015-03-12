@@ -58,7 +58,7 @@ public class ContentPage extends JFrame implements ActionListener{
 
 		ActionListener listener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (e.getActionCommand().equals("Manual Scheduling")) {
+				if (e.getActionCommand().equals("Save")) {
 
 				}
 
