@@ -1,8 +1,8 @@
 package map;
 
-import java.util.Arrays;
+import items.*;
 
-public class Map {
+public class Map{
 	private String name;
 	private int floor;
 	private int [][] mapping;
@@ -15,10 +15,10 @@ public class Map {
 		this.floor = floor;
 		this.width = width;
 		this.length = length;
-		this.mapping = new int [width][length];
-		for (int i = 0; i < width; i++){
-			for (int j = 0; j < length; j++){
-				mapping[i][j] = 0;
+		this.mapping = new int [length][width];
+		for (int i = 0; i < length; i++){
+			for (int j = 0; j < width; j++){
+				this.mapping[i][j] = 0;
 			}
 		}
 	}
@@ -28,10 +28,10 @@ public class Map {
 		this.floor = floor;
 		this.width = 20;
 		this.length = 20;
-		this.mapping = new int [width][length];
-		for (int i = 0; i < width; i++){
-			for (int j = 0; j < length; j++){
-				mapping[i][j] = 0;
+		this.mapping = new int [this.length][this.width];
+		for (int i = 0; i < this.length; i++){
+			for (int j = 0; j < this.width; j++){
+				this.mapping[i][j] = 0;
 			}
 		}
 	}
@@ -40,6 +40,18 @@ public class Map {
 	}
 	public void setMapping(int[][] mapping) {
 		this.mapping = mapping;
+	}
+	/**
+	 * set the item id be the new id in map according to the xy-coor
+	 * @param itemID
+	 * @param xpos starting from 0
+	 * @param ypos starting from 0
+	 */
+	public void setMapping(ItemGroup group, Items item, int xpos, int ypos) {
+		if (group.searchItem(item.getiD()) != null)
+			this.mapping[xpos][ypos] = item.getiD();
+		else
+			System.out.println("failed.");
 	}
 	public int getFloor() {
 		return floor;
@@ -68,9 +80,20 @@ public class Map {
 	@Override
 	public String toString() {
 		return "Map " + name + " floorid = " + floor + " mapping: " + "\n"
-				+ Arrays.toString(mapping) + "\n" + ", width=" + width + ", length="
+				+ mapToString(mapping) + "\n" + ", width=" + width + ", length="
 				+ length + "]";
 	}
 
+	public String mapToString(int[][] mapping) {
+		String map = "";
+		for (int i = 0; i < length; i++){
+			for (int j = 0; j < width; j++){
+				map = map + mapping[i][j];
+				map = map + " ";
+			}
+			map = map + "\n";
+		}
+		return map;
+	}
 
 }

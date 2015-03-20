@@ -7,29 +7,11 @@ public class Creatures extends Items{
 	private int atk;
 	private int def;
 	
-
-	public Creatures(String name, String picName, int iD, boolean pickable,
-			ArrayList<Integer> featureID, String description) {
-		super(name, picName, iD, pickable, featureID, description);
-		// TODO Auto-generated constructor stub
-	}
-	public Creatures(String name, String picName, int iD, boolean pickable,
-			String description) {
-		super(name, picName, iD, pickable, description);
-		// TODO Auto-generated constructor stub
-	}
 	
 	public Creatures(String name, String picName, int iD, boolean pickable,
 			ArrayList<Integer> featureID, String description, int hp, int atk,
 			int def) {
-		super(name, picName, iD, pickable, featureID, description);
-		this.hp = hp;
-		this.atk = atk;
-		this.def = def;
-	}
-	public Creatures(String name, String picName, int iD, 
-			ArrayList<Integer> featureID, String description, int hp, int atk, int def) {
-		super(name, picName, iD, true, featureID, description);
+		super(name, picName, pickable, iD, featureID, description);
 		this.hp = hp;
 		this.atk = atk;
 		this.def = def;

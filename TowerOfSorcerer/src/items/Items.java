@@ -5,29 +5,19 @@ import java.util.ArrayList;
 public class Items {
 	private String name;
 	private String picName;
-	private int ID;
+	private int iD;
 	private boolean pickable;
 	private ArrayList<Integer> featureID;
 	private String description;
 	
-	public Items(String name, String picName, int iD, boolean pickable,
+	public Items(String name, String picName, boolean pickable, int iD,
 			ArrayList<Integer> featureID, String description) {
 		super();
 		this.name = name;
 		this.picName = picName;
-		ID = iD;
+		this.iD = iD;
 		this.pickable = pickable;
 		this.featureID = new ArrayList<Integer>(featureID);
-		this.description = description;
-	}
-	public Items(String name, String picName, int iD, boolean pickable,
-			 String description) {
-		super();
-		this.name = name;
-		this.picName = picName;
-		ID = iD;
-		this.pickable = pickable;
-		this.featureID = new ArrayList<Integer>(0);
 		this.description = description;
 	}
 	
@@ -49,11 +39,11 @@ public class Items {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getID() {
-		return ID;
+	public int getiD() {
+		return iD;
 	}
-	public void setID(int iD) {
-		ID = iD;
+	public void setiD(int iD) {
+		this.iD = iD;
 	}
 	public String getDescription() {
 		return description;
@@ -64,7 +54,7 @@ public class Items {
 
 	@Override
 	public String toString() {
-		return "Items [name=" + name + ", picName=" + picName + ", ID=" + ID
+		return "Items [name=" + name + ", picName=" + picName + ", ID=" + iD
 				+ ", pickable=" + pickable + ", featureID=" + featureID
 				+ ", description=" + description + "]";
 	}
@@ -73,7 +63,7 @@ public class Items {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ID;
+		result = prime * result + iD;
 		result = prime * result
 				+ ((description == null) ? 0 : description.hashCode());
 		result = prime * result
@@ -83,6 +73,7 @@ public class Items {
 		result = prime * result + (pickable ? 1231 : 1237);
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -92,7 +83,7 @@ public class Items {
 		if (getClass() != obj.getClass())
 			return false;
 		Items other = (Items) obj;
-		if (ID != other.ID)
+		if (iD != other.iD)
 			return false;
 		if (description == null) {
 			if (other.description != null)
@@ -118,6 +109,7 @@ public class Items {
 			return false;
 		return true;
 	}
+
 	
 	
 }

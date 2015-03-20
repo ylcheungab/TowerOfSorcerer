@@ -21,28 +21,30 @@ public class ContentPage extends JFrame implements ActionListener{
 	private JMenu Appmenu = new JMenu("Options");;
 
 	public ContentPage (){
-	
 		setTitle("Tower of Sorcerer");
-		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent But) {
-				System.exit(0);
+				int n = JOptionPane.showConfirmDialog(null, "Exit Program without saving?",
+						"Confirm", JOptionPane.YES_NO_OPTION);
+				if (n == JOptionPane.YES_OPTION)
+					System.exit(0);
 			}
 		});
 		
-		setJMenuBar(createMenuBar());
-		
 		Container contentPane;
 		contentPane = getContentPane();
-	
-		JPanel left = new JPanel();
 		
-		JPanel Stat = new HeroStat();
-		left.add(Stat);
+		/**
+		 * the menu bar
+		 */
+		setJMenuBar(createMenuBar());
+
+		JPanel left = new Mapping();
+		
 		JPanel Item = new ItemPage();
-		left.add(Item);
+		JPanel Description = new Description();
 	
 		contentPane.add("West", left);
 	
