@@ -31,6 +31,13 @@ public class ItemGroup {
 	public Items getItem(int i){
 		return itemGroup.get(i);
 	}
+	public int getItem(Items item){
+		for(int i = 0; i < itemGroup.size(); i++){
+			if(itemGroup.get(i) == item)
+				return i;
+		}
+		return -1;
+	}
 	/**
 	 * add items into the list
 	 * @param e

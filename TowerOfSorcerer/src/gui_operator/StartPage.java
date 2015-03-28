@@ -1,4 +1,4 @@
-package gui;
+package gui_operator;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -14,6 +14,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * this is used for the startup Operator
+ * @author YatLaam
+ *
+ */
 public class StartPage extends JDialog implements ActionListener{
 
 	private JButton NewButton;
@@ -24,27 +29,21 @@ public class StartPage extends JDialog implements ActionListener{
 		setTitle("Start Options");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		/**
-		 * Action taken after closing the window
-		 * i.e. exit program
-		 */
+		//Action taken after closing the window
+		//i.e. exit program
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent But) {
 				System.exit(0);
 			}
 		});
 		
-		/**
-		 * the panel divided into five parts(east, north, south, west, center)
-		 * north part
-		 */
+		//the panel divided into five parts(east, north, south, west, center)
+		//north part
 		String startmsg = "This is Tower of Sorcerer ver. 1.0. "
 				+ "\n" + "Please choose one of the options:";
 		JLabel intromsg = new JLabel(startmsg);
 		
-		/**
-		 * center part is a panel, panel with buttons
-		 */
+		//center part is a panel, panel with buttons
 		JPanel ButtonPanel = new JPanel();
 		
 		NewButton = new JButton("New game");
@@ -59,9 +58,7 @@ public class StartPage extends JDialog implements ActionListener{
 		LeaveButton.addActionListener(this);
 		ButtonPanel.add(LeaveButton);
 		
-		/**
-		 * packing them together
-		 */
+		//packing
 		getContentPane().add(BorderLayout.NORTH, intromsg);
 		getContentPane().add(BorderLayout.CENTER, ButtonPanel);
 		pack();

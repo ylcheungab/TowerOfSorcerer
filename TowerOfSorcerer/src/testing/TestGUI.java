@@ -1,10 +1,11 @@
 package testing;
 
-import gui.StartPage;
+import gui_operator.ContentPage;
+import gui_operator.StartPage;
 
 public class TestGUI {
 	public static void main(String[] args){
-			StartPage Start = new StartPage();
+		ContentPage Start = new ContentPage();
 	}
 
 }

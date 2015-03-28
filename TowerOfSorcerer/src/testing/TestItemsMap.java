@@ -33,7 +33,7 @@ public class TestItemsMap {
 	
 	public static void main(String[] args){
 		String prompt = null;
-		Map firstfloor = new Map("Floor 1", 1);
+		Map firstfloor = new Map("Floor 1");
 		ItemGroup group = new ItemGroup();
 		Misc misc = new Misc();
 		
